@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE JS</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        form {
+            max-width: 300px;
+            margin: auto;
+        }
+
+        .form-input {
+            margin: 20px 0;
+        }
+
+        button {
+            color: white;
+            background: blue;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- <h2>{{products}} are in stock</h2> -->
+
+        <!-- <ul>
+            <li  v-for = "product of products">
+                <input type="number" v-model.number ="product.quantity">
+                {{product.name}}
+                <span v-if="product.quantity === 0"> - OUT OF STOCK</span>
+                <span v-if="product.quantity !== 0"> - IN STOCK</span>
+                <button @click="product.quantity += 1">Add</button>
+                <button @click="product.quantity -= 1">Subtract</button>
+            </li>
+        </ul>
+        <h2>Total Inventory - {{totalProducts}}</h2>
+        <button v-on:click="greet">Click</button> -->
+
+        <form>
+            <h3>Login Form</h3>
+            <div class="form-input">
+                <label for="name">Name</label>
+                <input type="text" placeholder="name" v-model="formData.name">
+            </div>
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="email" placeholder="email@domain.com" v-model="formData.email">
+            </div>
+            <button @click.prevent="submit">Submit</button>
+        </form>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            <tr v-for="data in tableData">
+                <th>{{data.name}}</th>
+                <th>{{data.email}}</th>
+            </tr>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
